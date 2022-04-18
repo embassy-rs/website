@@ -3,16 +3,6 @@
  * https://github.com/picocss/pico
  */
 
-// Render the `main` element consistently in IE
-main {
-  display: flex;
-  // should always have a single div that holds all content below main.
-  // TOC or Recent Posts are the only other sections that would be directly under main.
-  article, div {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-}
 
 body {
   width: 100%;

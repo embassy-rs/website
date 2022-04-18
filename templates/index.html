@@ -1,20 +1,82 @@
 {% import "macros/page.html" as page_macros %}
 {% import "macros/macros.html" as macros %}
 {% extends "base.html" %}{% block content %}
-  <div>{% for page in paginator.pages %}
-    <article>
-{{ macros::title(page=page) }}      <p>{{ page.summary | markdown(inline=true) | safe }} <a href="{{ page.permalink | safe }}">...more</a></p>
-    </article>{% endfor %}
-    <nav>
-      {% if paginator.previous %}<a href="{{ paginator.previous | safe }}">&#60; Previous</a> {% endif %}{% if paginator.next %}<a href="{{ paginator.next | safe }}">Next &#62;</a>{% endif %}
-    </nav>
-  </div>{% set section_item = get_section(path="_index.md") %}
-  {% if recent %}
-  <div class="toc">
-    <div class="toc-sticky">
-      <h3>Recent Posts</h3>{% for page in section_item.pages | slice(end=config.extra.recent_items) %}
-{{ page_macros::page_listing(page=page) }}{% endfor %}
-    </div>
-  </div>
-  {% endif %}
-  {% endblock content %}
+
+<div class="row">
+	<div>
+		<h1>The next-generation framework for embedded applications</h1>
+		<p>Write safe, correct and energy-efficient embedded code faster, using the Rust programming language, its async facilities, and the Embassy libraries.</p>
+		<a class="button" href="https://embassy.dev/embassy/dev/getting_started.html">Get started</a> [TODO make button]
+	</div>
+	<div>
+{% filter markdown%}
+```rust
+#[embassy::main]
+async fn main(_spawner: Spawner, p: Peripherals) {
+    let mut led = Output::new(p.P0_13, Level::Low, OutputDrive::Standard);
+
+    loop {
+        led.set_high();
+        Timer::after(Duration::from_millis(300)).await;
+        led.set_low();
+        Timer::after(Duration::from_millis(300)).await;
+    }
+}
+```
+{% endfilter %}
+	</div>
+</div>
+
+<div class="row">
+	<div>
+		<h1>Rust + async :heart: embedded</h1>
+		<p>The <a href="https://www.rust-lang.org/">Rust programming language</a> is blazingly fast
+			and memory-efficient, with no runtime, garbage collector or OS. It catches a wide variety
+			of bugs at compile time, thanks to its full memory- and thread-safety, and expressive type system.
+		</p>
+		<p>Rust's <a href="https://rust-lang.github.io/async-book/">async/await</a> allows for unprecedently
+			easy and efficient multitasking in embedded systems. Tasks get transformed at compile time into state
+			machines that get run cooperatively. It requires no dynamic memory allocation, and runs on a single
+			stack,  so no per-task stack size tuning is required. It obsoletes the need for a traditional RTOS
+			with kernel context switching, and is <a href="https://tweedegolf.nl/en/blog/65/async-rust-vs-rtos-showdown">faster and smaller than one!</a>
+		</p>
+	</div>
+	<div>
+		<h1>blah</h1>
+		TODO
+	</div>
+</div>
+
+{% filter markdown%}
+
+........
+
+TODO write about these things:
+
+- Hardware support
+	- STM32
+	- nRF
+
+- Batteries included, but optional
+	- Timekeeping that Just Works
+	- Real-time ready
+	- Low-power friendly
+	- Great for IoT, communication-heavy projects
+		- Networking
+		- USB
+		- LoRa
+		- Bluetooth
+	- Bootloader
+	- Vibrant Ecosystem
+		- embedded-hal
+		- hundreds of drivers, link to awesome-embedded-rust
+
+- Is embassy an RTOS? (maybe better for a blog post)
+
+- Production-ready
+	- Akiles testimonial
+	- Others??? :) 
+{% endfilter %}
+
+</div>
+{% endblock content %}

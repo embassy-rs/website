@@ -1,6 +1,6 @@
-base_url = "https://jieiku.github.io/abridge-demo/"
-title = "abridge - Zola Theme"
-description = "abridge is a fast and lightweight Zola theme using semantic html, abridge.css class-light CSS, and No JS."
+base_url = "https://embassy.dev/"
+title = "Embassy"
+description = "Embassy is the next-generation "
 default_language = "en"
 #theme = "abridge"
 
@@ -35,21 +35,18 @@ recent_items = 9
 footer_credit = true
 #google = "Your Google Site verification code."
 #bing = "Your Bing Site verification code."
-textlogo = '<font color="#f90">A</font>bridge'
+textlogo = 'Embassy'
 sitedesc = false # This enables or disables the display of the site description below the logo.
 author = "Your Name"
 keywords = "Whatever, SEO, keywords, you want"
 banner = "banner.png"
 menu = [
-    {url = "/", name = "Home", slash = true},
-    {url = "/about/", name = "About", slash = true},
-    {url = "/posts/", name = "Posts", slash = true},
-    {url = "/categories/", name = "Categories", slash = true},
-    {url = "/tags/", name = "Tags", slash = true},
+    {url = "/", name = "About", slash = true},
+    {url = "/blog/", name = "Blog", slash = true},
+#    {url = "/categories/", name = "Categories", slash = true},
+#    {url = "/tags/", name = "Tags", slash = true},
 ]
 menu_footer = [
-    {url = "/", name = "Home", slash = true},
-    {url = "/about/", name = "About", slash = true},
     {url = "/contact/", name = "Contact", slash = true},
     {url = "/privacy/", name = "Privacy", slash = true},
     {url = "/sitemap.xml", name = "Sitemap", slash = false},
@@ -61,23 +58,22 @@ twitter = "your-user-name"
 
 # Footer social links; full options listed in macros/social.html
 [extra.social]
+github = "embassy-rs"
 feed = true
-mail = "name@example.com"
-mastodon = "@your-user-name"
-element = "matrix.example.com"
-#matrix = "matrix.example.com"
-twitter = "your-user-name"
-facebook = "your-user-name"
-linkedin = "your-user-name"
 
-gitlab = "your-user-name"
-github = "your-user-name"
-bitbucket = "your-user-name"
-python = "your-user-name"
-docker = "your-user-name"
-stack = "your-user-name"
-
-instagram = "your-user-name"
-pinterest = "your-user-name"
-twitch = "your-user-name"
-youtube = "your-channel-id"
+#mail = "name@example.com"
+#mastodon = "@your-user-name"
+#element = "matrix.example.com"
+##matrix = "matrix.example.com"
+#twitter = "your-user-name"
+#facebook = "your-user-name"
+#linkedin = "your-user-name"
+#gitlab = "your-user-name"
+#bitbucket = "your-user-name"
+#python = "your-user-name"
+#docker = "your-user-name"
+#stack = "your-user-name"
+#instagram = "your-user-name"
+#pinterest = "your-user-name"
+#twitch = "your-user-name"
+#youtube = "your-channel-id"
