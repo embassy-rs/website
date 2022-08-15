@@ -42,7 +42,7 @@ keywords = "embedded, framework, library, rust, async, stm32, nrf, nordic, rtos,
 banner = "banner.png"
 menu = [
     {url = "/", name = "About", slash = true},
-    {url = "https://embassy.dev/embassy/dev/index.html", name = "Documentation", slash = false},
+    {url = "https://embassy.dev/book/", name = "Documentation", slash = false},
     {url = "https://docs.embassy.dev/", name = "API Reference", slash = false},
     
     {url = "/blog/", name = "Blog", slash = true},
