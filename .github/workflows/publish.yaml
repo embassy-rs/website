@@ -1,0 +1,25 @@
+name: Publish
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch: { }
+
+jobs:
+
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Zola
+        run: |
+          wget -q -O - "https://github.com/getzola/zola/releases/download/v0.16.1/zola-v0.16.1-x86_64-unknown-linux-gnu.tar.gz" | tar xzf - -C /usr/local/bin
+      - name: Publish
+        shell: bash
+        run: |
+          zola build
+          mkdir -p ~/.kube
+          echo "${{secrets.KUBECONFIG}}" > ~/.kube/config
+          POD=$(kubectl -n embassy get po -l app=website -o jsonpath={.items[0].metadata.name})
+          mv public html
+          kubectl cp html $POD:/usr/share/nginx
