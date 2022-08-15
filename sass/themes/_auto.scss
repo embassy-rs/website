@@ -17,16 +17,19 @@
   --c3: #ddd; //color 3 333
   --c4: #777; //color 4 888
 
-  --a1: rgb(0, 206, 65); //accent color 1 link
-  --a2: rgb(83, 255, 137); //accent color 2 hover,focus
-  --a3: rgb(83, 255, 137); //accent color 3 h1-h2 hover,focus
+  --af: rgb(255, 255, 255); //Foreground over accent color
+  --ab: rgb(0, 165, 52); //accent color background
+
+  --a1: rgb(0, 169, 53); //accent color 1 link
+  --a2: rgb(11, 115, 44); //accent color 2 hover,focus
+  --a3: rgb(16, 145, 57); //accent color 3 h1-h2 hover,focus
 
   --cg: #483; //ins green
   --cr: #d33; //del red
 
   // Spacings
-  --s1: .5rem;
-  --s2: 1rem;
+  --s1: 1rem;
+  --s2: 2rem;
   --rc: .5rem; //radius corners
 
   // Borders
@@ -60,6 +63,10 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
+    --a1: rgb(0, 206, 65); //accent color 1 link
+    --a2: rgb(83, 255, 137); //accent color 2 hover,focus
+    --a3: rgb(83, 255, 137); //accent color 3 h1-h2 hover,focus
+
     --f1: #ccc; //font color 1
     --f2: #ddd; //font color 2
 

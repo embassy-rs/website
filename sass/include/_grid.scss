@@ -2,12 +2,17 @@
 div.row {
     display: flex;
     flex-flow: row wrap;
+    column-gap: 30px;
 }
 
 div.row > div  {
     flex: 1;
-    color: var(--f2);
-    padding: var(--s1);
-    margin: var(--s1);
 }
 
+
+div.grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    column-gap: 30px;
+    row-gap: 30px;
+}

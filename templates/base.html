@@ -106,7 +106,7 @@
     </header>
     <div overflow>
       <ul>
-        {% for i in config.extra.menu %}<li><h2><a href="{{ get_url(path=i.url, trailing_slash=i.slash) }}">{{ i.name }}</a></h2></li>{% endfor %}
+        {% for i in config.extra.menu %}<li><h2><a href="{% if i.url is containing("://")%}{{i.url}}{%else%}{{ get_url(path=i.url, trailing_slash=i.slash) }}{%endif%}">{{ i.name }}</a></h2></li>{% endfor %}
       </ul>
     </div>
   </nav>

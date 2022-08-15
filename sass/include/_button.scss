@@ -1,38 +1,34 @@
-// Form elements (button)
-button,
-input,
-select,
-textarea {
-  margin: 0;
-  padding: .5rem .75rem;
-  max-width: 100%;
-  background: var(--c2);
-  border: 0;
-  border-radius: .25rem;
-  font: inherit;
-  line-height: 1.125;
-  color: var(--f1);
-}
+
+a.button,
 button,
 [type="button" i],
 [type="submit" i],
 [type="reset" i] {
-  -webkit-appearance: button;
   display: inline-block;
   text-align: center;
   white-space: nowrap;
-  background: var(--c2);
-  color: var(--f1);
+  margin: 0;
+  padding: .5rem .75rem;
+  max-width: 100%;
   border: 0;
-  cursor: pointer;
-  transition: opacity .25s;
+  border-radius: .25rem;
+
+  font-weight: bold;
+  background: var(--ab);
+  color: var(--af);
+  border: 0;
+  transition: background-color .25s;
 }
+
+a.button:hover,
 button:hover,
 [type="button" i]:hover,
 [type="submit" i]:hover,
 [type="reset" i]:hover {
-  opacity: .75;
+  background: var(--a1);
 }
+
+a.button.disabled,
 button[disabled],
 [type="button" i][disabled],
 [type="submit" i][disabled],

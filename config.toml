@@ -1,6 +1,6 @@
 base_url = "https://embassy.dev/"
 title = "Embassy"
-description = "Embassy is the next-generation "
+description = "The next-generation framework for embedded applications. Write safe, correct and energy-efficient embedded code faster, using the Rust programming language, its async facilities, and the Embassy libraries."
 default_language = "en"
 #theme = "abridge"
 
@@ -32,22 +32,27 @@ smart_punctuation = false          # `...` to `…`, `"quote"` to `“curly”` 
 katex_enable = false # used to to render mathematical notations, requires js
 recent = true
 recent_items = 9
-footer_credit = true
+footer_credit = false
 #google = "Your Google Site verification code."
 #bing = "Your Bing Site verification code."
 textlogo = 'Embassy'
 sitedesc = false # This enables or disables the display of the site description below the logo.
-author = "Your Name"
-keywords = "Whatever, SEO, keywords, you want"
+author = "Embassy"
+keywords = "embedded, framework, library, rust, async, stm32, nrf, nordic, rtos, operating system"
 banner = "banner.png"
 menu = [
     {url = "/", name = "About", slash = true},
+    {url = "https://embassy.dev/embassy/dev/index.html", name = "Documentation", slash = false},
+    {url = "https://docs.embassy.dev/", name = "API Reference", slash = false},
+    
     {url = "/blog/", name = "Blog", slash = true},
+    {url = "https://matrix.to/#/#embassy-rs:matrix.org", name = "Chat", slash = false},
+    {url = "https://github.com/embassy-rs/embassy", name = "GitHub", slash = false},
+    
 #    {url = "/categories/", name = "Categories", slash = true},
 #    {url = "/tags/", name = "Tags", slash = true},
 ]
 menu_footer = [
-    {url = "/contact/", name = "Contact", slash = true},
     {url = "/privacy/", name = "Privacy", slash = true},
     {url = "/sitemap.xml", name = "Sitemap", slash = false},
 ]
