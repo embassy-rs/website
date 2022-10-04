@@ -21,5 +21,6 @@ jobs:
           mkdir -p ~/.kube
           echo "${{secrets.KUBECONFIG}}" > ~/.kube/config
           POD=$(kubectl -n embassy get po -l app=website -o jsonpath={.items[0].metadata.name})
-          mv public html
-          kubectl cp html $POD:/usr/share/nginx
+          TEMP=$(kubectl exec $POD -- mktemp -d)
+          kubectl cp public $POD:$TEMP
+          kubectl exec $POD -- bash -c "mkdir -p /usr/share/nginx/html && cp -R $TEMP/public/. /usr/share/nginx/html/ && rm -rf $TEMP"
