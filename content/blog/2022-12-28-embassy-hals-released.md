@@ -25,16 +25,20 @@ Embassy HALs implement the traits from `embedded-hal` (both blocking and async).
 Starting with Rust 1.75, Embassy can now be compiled with a stable rust compiler. This removes a roadblock for many who have reservations against using a nightly compiler. This also means starting now, Embassy can now be built using the stable Rust compiler at the time of release. This will improve the situation where different crates have different compiler support and put another hurdle for compiler regressions to impact Embassy applications.
 
 
-## TODO: USB?
+## USB
+
+In addition to the HALs, the Embassy USB stack has also been released. The USB stack is an async USB stack that works with all the Embassy HALs, and there are already generic functionality in Embassy using it such as `embassy-usb-logger` and `embassy-usb-dfu`. 
 
 ## TODO: NET?
 
-## TODO: BOOT?
+## Bootloader
+
+Embassy Boot is a lightweight bootloader supporting firmware updates in a power-fail-safe way, with trial boots and rollbacks. With the release of Embassy HALs, the chip specific libraries can also be released: `embassy-boot-nrf`, `embassy-boot-stm32` and `embassy-boot-rp`.
 
 ## The future
 
 With all that out of the way, what is the way forward? As with all software, Embassy will still have bugs that needs fixing, new features that needs adding, so little will change in that regard.
 
-Now that crates no longer needs to be built from git, board support crates and anything requiring a dependency on the HAL can now also be released (`embassy-boot-{nrf, stm32, rp}` have all been released as well), and it will be interesting to see what developers will built in the coming year.
+Now that crates no longer needs to be built from git, board support crates and anything requiring a dependency on the HAL can now also be released, and it will be interesting to see what developers will built in the coming year.
 
 Clearly, 2024 will be the year of Rust on embedded. Help us spread the word by showing, demoing and talking about Embassy as well as Embedded Rust!
