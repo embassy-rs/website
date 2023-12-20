@@ -1,12 +1,12 @@
 +++
-title = "Embassy HALs released"
+title = "Embassy crates released and Rust stable support"
 +++
 
-The Embassy HAL crates have now been released to crates.io! Read on to learn about this major milestone for the Embassy project.
+The Embassy HAL, USB, NET and bootloader crates have now been released to crates.io! Read on to learn about this major milestone for the Embassy project.
 
 <!-- more -->
 
-Following the recent releases of [embedded-hal](https://github.com/rust-embedded/embedded-hal/) crates and [Rust 1.75](https://releases.rs/docs/1.75.0/), the Embassy HALs for [Nordic nRF](https://crates.io/crates/embassy-nrf), [STM32](https://crates.io/crates/embassy-stm32) and [Raspberry Pi RP2040](https://crates.io/crates/embassy-rp) have now been released to [crates.io](https://crates.io). 
+Following the recent releases of [embedded-hal](https://github.com/rust-embedded/embedded-hal/) crates and [Rust 1.75](https://releases.rs/docs/1.75.0/), the Embassy HALs for [Nordic nRF](https://crates.io/crates/embassy-nrf), [STM32](https://crates.io/crates/embassy-stm32) and [Raspberry Pi RP2040](https://crates.io/crates/embassy-rp) have now been released to [crates.io](https://crates.io) ([What is a HAL?](https://docs.rust-embedded.org/book/appendix/glossary.html#hal)).
 
 This is a major milestone with contributions from a lot of people: thank you for all the contributions over the years! At the time of writing, 226 contributors have made changes to the Embassy code base in one way or the other.
 
@@ -24,12 +24,22 @@ Embassy HALs implement the traits from `embedded-hal` (both blocking and async).
 
 Starting with Rust 1.75, Embassy can now be compiled with a stable rust compiler. This removes a roadblock for many who have reservations against using a nightly compiler. This also means starting now, Embassy can now be built using the stable Rust compiler at the time of release. This will improve the situation where different crates have different compiler support and put another hurdle for compiler regressions to impact Embassy applications.
 
-
 ## USB
 
-In addition to the HALs, the Embassy USB stack has also been released. The USB stack is an async USB stack that works with all the Embassy HALs, and there are already generic functionality in Embassy using it such as `embassy-usb-logger` and `embassy-usb-dfu`. 
+In addition to the HALs, the Embassy USB stack has also been released ([embassy-usb](https://crates.io/crates/embassy-usb) and [embassy-usb-driver](https://crates.io/crates/embassy-usb-driver)). The USB stack is a fully async USB stack that works with all the Embassy HALs. 
 
-## TODO: NET?
+There are also some generic functionality in Embassy using it such as [`embassy-usb-logger`](https://crates.io/crates/embassy-usb-logger) and [`embassy-usb-dfu`](https://crates.io/crates/embassy-usb-dfu). 
+
+## Networking
+
+In addition to the existing `embassy-net` crate, there are now multiple network drivers released:
+
+* [embassy-net-esp-hosted](https://crates.io/crates/embassy-net-esp-hosted)
+* [embassy-net-wiznet](https://crates.io/crates/embassy-net-wiznet)
+* [embassy-net-adin1110](https://crates.io/crates/embassy-net-adin1110)
+* [embassy-net-enc28j60](https://crates.io/crates/embassy-net-enc28j60)
+
+These drivers integrate ethernet and WiFi chips with the `embassy-net` networking stack (Embassy-net is an async layer on top of [smoltcp](https://crates.io/crates/smoltcp) TCP/IP stack).
 
 ## Bootloader
 
