@@ -4,9 +4,10 @@
 
 use defmt::*;
 use embassy_executor::Spawner;
-use embassy_nrf::gpio::{AnyPin, Input, Level, Output, OutputDrive, Pull};
 use embassy_nrf::Peri;
+use embassy_nrf::gpio::{AnyPin, Input, Level, Output, OutputDrive, Pull};
 use embassy_time::Timer;
+use {defmt_rtt as _, panic_probe as _};
 
 // Declare async tasks
 #[embassy_executor::task]
